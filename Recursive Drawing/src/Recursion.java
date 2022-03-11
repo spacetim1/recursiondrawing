@@ -32,7 +32,7 @@ public class Recursion extends JPanel implements ActionListener{
 		concentricCircles(g, 100, 0, 0);
 		squares(g, 100, 200, 200);
 		clover(g, 100, 400, 100);
-
+		roundy(g, 1400, 200, -100);
 	} //my code should go above this bracket unless I know about classes
 	
 	public void squares(Graphics g, int width, int x, int y) {
@@ -66,8 +66,30 @@ public class Recursion extends JPanel implements ActionListener{
 		 
 	}
 	
+	public void roundy(Graphics g, int width, int x, int y) {
+		//set color to a lighter color to contrast against black background
+		int red = (int)(Math.random()*(255-0+1));
+		int green = (int)(Math.random()*(255-0+1));
+		int blue = (int)(Math.random()*(255-0+1));
+		Color newColor = new Color(red, green, blue);
+		
+		g.setColor(newColor);		
+		g.drawOval(x, y, width, width);
+		
+		//base case - when does it stop calling itself
+		if(width <= 0) {
+			return; //done with recursion
+		} else {
+			//call the method to draw the next part of the pattern
+			roundy(g, width-3, x+2, y+1);
+		}
+		
+		
+	}	
 	
-	
+	public void snowflake(Graphics g, int width, int x, int y) {
+		
+	}
 	
 	public void clover(Graphics g, int width, int x, int y) { //What additional variables will you need to draw the shape?
 		//set color to a lighter color to contrast against black background
@@ -84,12 +106,9 @@ public class Recursion extends JPanel implements ActionListener{
 		} else {
 			//call the method to draw the next part of the pattern
 			clover(g, width-10, x+10, y+10);
-
-
 		}
 	}
 	
-
 
 	
 	public static void main(String[] arg) {
