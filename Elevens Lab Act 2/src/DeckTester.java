@@ -9,13 +9,18 @@ public class DeckTester {
 	 */
 	public static void main(String[] args) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
-		String[] ranks = {"jack", "queen", "king"};
-		String[] suits = {"blue", "red"};
-		int[] pointValues = {11, 12, 13};
+		String[] ranks = {"jack", "queen", "king", "ace"};
+		String[] suits = {"club", "spade", "heart", "diamond"};
+		int[] pointValues = {10,11,12,1};
 		Deck test1 = new Deck(ranks, suits, pointValues);
 		
-		test1.isEmpty();
-		test1.size();
-		test1.deal();
+		System.out.println(test1.isEmpty());
+		System.out.println(test1.size());
+		
+		for(int i = 0; i < (ranks.length)*(suits.length); i++) {
+			System.out.println(test1.deal());
+		}
+
+
 	}
 }

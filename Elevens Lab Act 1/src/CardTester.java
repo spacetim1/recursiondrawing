@@ -14,5 +14,16 @@ public class CardTester {
 		Card test3 = new Card("King", "Clubs", 13);
 
 		System.out.println("Card one matches Card two: " + test1.matches(test2));
+		
+		System.out.println(test3.rank());
+		
+		System.out.println(test3.suit());
+		
+		System.out.println(test3.pointValue());
+		
+		System.out.println(test3.toString());
+		
+
+		
 	}
 }
